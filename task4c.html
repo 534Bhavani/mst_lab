@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movie Ticket Booking</title>
+    </head>
+    <script> 
+        function bookTickets() 
+        { 
+            let numOfSeats = document.getElementById("seats").value;
+            let totalPrice = 0; 
+            if (numOfSeats<= 2) 
+            {
+                totalPrice = numOfSeats * 150; 
+            } 
+            else if (numOfSeats>= 6) 
+            { 
+                alert("Sorry, maximum 5 seats can be booked at a time!");
+            } 
+            else 
+            {
+                totalPrice = numOfSeats * 200;
+            }
+            document.getElementById("totalPrice").innerHTML = `Total Price: Rs.
+                                                                ${totalPrice}`;
+        }
+    </script>
+    <body>
+        <h1>Movie Ticket Booking</h1>
+        <label for="seats">Number of Seats:</label>
+        <input type="number" id="seats" name="seats" min="1" max="5"><br><br>
+        <button onclick="bookTickets()">Book Tickets</button><br><br>
+        <p id="totalPrice"></p>
+    </body>
+</html>
+

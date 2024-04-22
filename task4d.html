@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ice Cream Cone</title>
+    <style> 
+        body 
+        { 
+            background-color: #f2f2f2;
+        } 
+        h1 
+        {
+            font-size: 36px; 
+            text-align: center; 
+            color: #333;
+        }
+        .cone 
+        { 
+            margin:50px auto; 
+            width: 200px; 
+            height: 300px; 
+            background-color: white; 
+            border-radius: 50% / 100%; 
+            position: relative;
+            overflow: hidden; 
+            border: 5px solid #ccc;
+        }
+        .ice-cream 
+        { 
+            width: 180px;
+            height: 180px; 
+            background-color: #f90;
+            position: absolute; 
+            bottom: -90px;
+            left: 10px; 
+            border-radius: 50%; 
+            box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.5);
+        }
+        .empty:after 
+        { 
+            content: ""; 
+            width: 160px; 
+            height: 160px;
+            background-color: white; 
+            position: absolute; 
+            top: -100px; 
+            left:20px; 
+            border-radius: 50%;
+            box-shadow: 0 0 0 5px #ccc;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="cone empty"></div>
+        <h1>Click the Cone to Fill It Up</h1>
+        <script> 
+            let isFilled = false;
+            const cone = document.querySelector(".cone"); 
+            cone.addEventListener("click", () => {
+                                        isFilled = !isFilled; 
+                                        cone.classList.toggle("empty");
+                                        if (isFilled) 
+                                        { 
+                                            cone.style.backgroundColor = "#f90";
+                                            document.querySelector("h1").textContent = "Enjoy Your Ice Cream!"; 
+                                            document.querySelector("body").style.backgroundColor = "lightblue";
+                                        } 
+                                        else 
+                                        { 
+                                            cone.style.backgroundColor = "white";
+                                            document.querySelector("h1").textContent = "Want more Ice Cream! Click the cone again"
+                                        }
+                                        });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Movie Ticket Booking</title>
+<script> 
+    function bookTickets() 
+    { // Get the number of tickets 
+        let numTickets = parseInt(document.getElementById("numTickets").value);
+      // Check if number of tickets is less than or equal
+      // Display the total cost 
+      let pricePerTicket = 150;
+      if(numTickets<=2)
+      {
+        totalCost = pricePerTicket * numTickets;
+      document.getElementById("totalCost").innerHTML = "Total Cost: Rs. " +totalCost; 
+      
+      
+      } 
+      else if (numTickets>= 6) 
+      {
+        // Display an error message
+        document.getElementById("totalCost").innerHTML = "Booking not allowed. Maximum 5 tickets can be booked.";
+      } 
+      else 
+      {
+        // Display an error message
+        document.getElementById("totalCost").innerHTML = "Booking not allowed. Minimum 1 and maximum 2 tickets can be booked.";
+      }
+    }
+</script>
+</head>
+<body>
+<h1>Movie Ticket Booking</h1>
+<label for="numTickets">Number of Tickets:</label>
+<input type="number" id="numTickets" name="numTickets" min="1" max="5"><br><br>
+<button onclick="bookTickets()">Book Tickets</button><br><br>
+<div id="totalCost"></div>
+</body>
+</html>

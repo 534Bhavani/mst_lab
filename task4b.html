@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Employee Information</title>
+    </head>
+    <body>
+        <h2>Employee Information</h2>
+        <div id="employee"></div>
+        <script> // Person class 
+            class Person 
+            {
+                constructor(name, age) 
+                {
+                    this.name = name;
+                    this.age = age;
+                }
+            }
+            // Employee class extending from Person class 
+            class Employee extends Person 
+            { 
+                constructor(name, age, role) 
+                {
+                    super(name, age); 
+                    this.role = role;
+                }
+            }
+            // Creating an employee object 
+            let emp = new Employee("John", 25, "Manager");
+            // Displaying employee information 
+            document.getElementById("employee").innerHTML = `Name: ${emp.name}<br>
+                                                            Age: ${emp.age}<br>
+                                                            Role: ${emp.role}`;
+        </script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+    </head>
+    <body>
+        <h1>Login Page</h1>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <button type="button" onclick="validateLogin()">Login</button>
+        </form>
+    <script> 
+        class User 
+        {
+            constructor(username, password) 
+            { 
+                this.username = username; 
+                this.password = password;
+            }
+            validate() 
+            {
+                if (this.username === this.password) 
+                {
+                    return "Login Successful";
+                }   
+                else 
+                {
+                    return "Invalid username or password";
+                }
+            }   
+        }
+        function validateLogin() 
+        {
+            const username = document.getElementById("username").value; 
+            const password = document.getElementById("password").value;
+            const user = new User(username, password); 
+            const validationMsg = user.validate();
+            alert(validationMsg);
+        }
+    </script>
+    </body>
+</html>

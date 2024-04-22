@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stock Price Simulator</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Stock Price Simulator</h1>
+        <p>Click the button to start simulating periodic stock price changes.</p>
+        <button onclick="startSimulation()">Start Simulation</button><br>
+        <button onclick="stopSimulation()">Stop Simulation</button>
+        <script>
+            function getRandomPrice(min, max) 
+            {
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+            let intervalId;
+            function startSimulation() 
+            { 
+                intervalId = setInterval(() => {
+                                                const price = getRandomPrice(50, 150); 
+                                                console.log(`Stock price: $${price}`);
+                                                }, 3000);
+            }
+            function stopSimulation() 
+            { 
+                clearInterval(intervalId); 
+                console.log("Simulation stopped.");
+            }
+        </script>
+    </body>
+</html>

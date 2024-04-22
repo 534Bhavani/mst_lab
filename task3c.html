@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Book Movie Tickets Online</title>
+</head>
+<body>
+<h1>Book Movie Tickets Online</h1>
+<form>
+<label for="num_tickets">Number of Tickets:</label>
+<input type="number" id="num_tickets" name="num_tickets" min="1" max="10" required><br><br>
+<label for="price_per_ticket">Price Per Ticket:</label>
+<input type="number" id="price_per_ticket" name="price_per_ticket" value="150" readonly><br><br>
+<button type="button" onclick="calculateTotal()">Calculate Total</button><br><br>
+<label for="total_price">Total Price:</label>
+<input type="number" id="total_price" name="total_price" readonly><br><br>
+<label for="discounted_amount">Discounted Amount:</label>
+<input type="number" id="discounted_amount" name="discounted_amount" readonly><br><br></form>
+
+<script> function calculateTotal() 
+    { 
+        const numTickets = document.getElementById("num_tickets").value; 
+        const pricePerTicket = document.getElementById("price_per_ticket").value; 
+        const totalPrice = numTickets * pricePerTicket; 
+        const discount = 0.1;
+        const discountedAmount = totalPrice * discount; 
+        document.getElementById("total_price").value = totalPrice; 
+        document.getElementById("discounted_amount").value = discountedAmount;
+    }
+</script>
+</body>
+</html>

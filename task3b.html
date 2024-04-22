@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Movie Details</title>
+</head>
+<body>
+<h1>Movie Details</h1>
+<div id="movieDetails"></div>
+<script>
+const movieName = "The Shawshank Redemption"; 
+const starring = ["Tim Robbins", "Morgan Freeman"]; 
+const language = "English";
+const ratings={ IMDB:9.3,Metacritic: 80,RottenTomatoes: 91};
+const movieDetailsDiv = document.getElementById("movieDetails");
+movieDetailsDiv.innerHTML = `
+            <h2>${movieName}</h2>
+            <p>Starring: ${starring.join(", ")}</p>
+            <p>Language: ${language}</p>
+            <p>Ratings:</p>
+            <ul>
+            <li>IMDB: ${ratings.IMDB}</li>
+            <li>Rotten Tomatoes: ${ratings.RottenTomatoes}%</li>
+            <li>Metacritic: ${ratings.Metacritic}</li>
+            </ul>
+`;
+</script>
+</body>
+</html>

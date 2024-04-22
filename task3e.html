@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Movie Ticket Booking</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <h2>Movie Ticket Booking</h2>
+        <p>Enter the number of seats to be booked:</p>
+        <input type="text" id="numSeats">
+        <button onclick="calculatePrice()">Calculate Price</button>
+        <p id="price"></p>
+        <script> 
+            function calculatePrice() 
+            { 
+                let numSeats = parseInt(document.getElementById("numSeats").value);
+                let pricePerTicket= 150;
+                let totalPrice = 0;
+                if (numSeats<= 2) 
+                { 
+                    totalPrice = numSeats * pricePerTicket;
+                } 
+                else if (numSeats>= 6) 
+                { 
+                    alert("Sorry! Booking is not allowed for more than 5 seats.");
+                    return;
+                } 
+                else 
+                {
+                    for (let i = 1; i<= numSeats; i++) 
+                    {
+                        if (i<= 2) 
+                        {
+                            totalPrice += pricePerTicket;
+                        } 
+                        else 
+                        {
+                            pricePerTicket = pricePerTicket * 0.9; // apply 10% discount 
+                            totalPrice += pricePerTicket;
+                            pricePerTicket= 150;
+                        }
+                    }
+                }
+                document.getElementById("price").innerHTML = "Total Price: Rs. " + totalPrice;
+            }
+        </script>
+    </body>
+</html>

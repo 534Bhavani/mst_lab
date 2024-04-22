@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movie Details</title>
+    </head>
+    <body>
+        <h1>Movie Details</h1>
+        
+    <table width = 50% >
+        <thead>
+            <tr>
+                    <th>Name</th>
+                    <th>Starring</th>
+                    <th>Language</th>
+                    <th>Ratings</th>
+            </tr>
+        </thead>
+    </table> 
+    <div id = movie-details></div> 
+    <script>  
+        let movies = [
+                        {
+                        name: "The Shawshank Redemption",
+                        starring: "Tim Robbins, Morgan Freeman",
+                        language: "English",
+                        ratings: 9.3,
+                        },
+                        {
+                        name: "The Godfather",
+                        starring: "Marlon Brando, Al Pacino, James Caan", 
+                        language: "English",
+                        ratings: 9.2,
+                        },
+                        {
+                        name: "The Dark Knight",
+                        starring: "Christian Bale, Heath Ledger", 
+                        language: "English",
+                        ratings: 9.0,
+                        },
+                        {
+                        name: "Schindler's List",
+                        starring: "Liam Neeson, Ben Kingsley, Ralph Fiennes", 
+                        language: "English",
+                        ratings: 8.9,
+                        },
+                    ];
+        let movieTable = document.getElementById("movie-details"); 
+        movies.forEach((movie) => {
+                                    let row = document.createElement("tr");
+                                    let nameCell = document.createElement("td"); 
+                                    nameCell.textContent = movie.name; 
+                                    row.appendChild(nameCell);
+
+                                    let starringCell = document.createElement("td");
+                                    starringCell.textContent = movie.starring;
+                                    row.appendChild(starringCell);
+
+                                    let languageCell = document.createElement("td"); 
+                                    languageCell.textContent = movie.language; 
+                                    row.appendChild(languageCell);
+
+                                    let ratingsCell = document.createElement("td");
+                                    ratingsCell.textContent = movie.ratings;
+                                    row.appendChild(ratingsCell);
+
+                                    movieTable.appendChild(row);
+                                }
+                        );
+    </script>
+    </body>
+</html>

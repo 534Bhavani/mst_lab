@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+<title>IEKart Signup</title>
+</head>
+<body>
+<hl>IEKart Signup</hl>
+<form action="process-signup.php" method="post">
+<br>
+<label for="username">Username:</label>
+<input type="text" id="username" name="username" required>
+<br><br>
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+<br><br>
+<label for="password">Password:</label>
+<input type="password" id="password" name="password" required>
+<br><br>
+<label for="confirm-password">Confirm Password:</label>
+<input type="password" id="confirm-password" name="confirm-password">
+<br><br>
+<label for="dob">Date of Birth:</label>
+<input type="date" id="dob" name="dob" required>
+<br><br>
+<label for="gender">Gender:</label>
+<select id="gender" name="gender" required>
+<option value="Select Gender"></option>
+<option value="male">Male</option> 
+<option value="female">Female</option>
+<option value="other">Other</option>
+</select>
+<br><br>
+<label for="favorite-color">Favorite Color:</label>
+<input type="color" id="favorite-color" name="favorite-color">
+<br><br>
+<label for="interests">Interests:</label>
+<input type="text" id="interests" name="interests">
+<br><br>
+<label for="newsletter">Subscribe to Newsletter:</label>
+<input type="checkbox" id="newsletter" name="newsletter" value="yes">
+<br><br>
+<label for="agreement">Agree to Terms and Conditions:</label>
+<input type="checkbox" id="agreement" name="agreement" required>
+<br><br>
+<input type="submit" value="Signup">
+</form>
+</body>
+</html>
